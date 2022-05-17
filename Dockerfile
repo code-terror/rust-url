@@ -11,8 +11,10 @@ RUN ${HOME}/.cargo/bin/cargo install -f cargo-fuzz
 RUN git clone https://github.com/servo/rust-url.git
 WORKDIR /rust-url/url/fuzz/
 RUN ${HOME}/.cargo/bin/cargo fuzz build
-
+WORKDIR /rust-url
+COPY Mayhemfile Mayhemfile
 # Package Stage
 FROM ubuntu:20.04
 
 COPY --from=builder /rust-url/url/fuzz/target/x86_64-unknown-linux-gnu/release/* /
+COPY --from=builder /rust-url/Mayhemfile /

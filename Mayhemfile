@@ -1,0 +1,6 @@
+project: code-terror/rust-url
+target: parse
+
+cmds:
+  - cmd: ./parse
+        libfuzzer: true
