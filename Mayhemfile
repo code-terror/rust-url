@@ -3,4 +3,4 @@ target: parse
 
 cmds:
   - cmd: ./parse
-        libfuzzer: true
+    libfuzzer: true
