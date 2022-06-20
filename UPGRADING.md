@@ -5,7 +5,8 @@ versions.
 
 ## Upgrading from url 1.x to 2.1+
 
-* The minimum supported Rust versio.
+* The minimum supported Rust version is now v1.33.0. Verify that you can bump
+  your library or application to the same MSRV.
 
 * `Url` no longer implements `std::net::ToSocketAddrs`. You will instead need to
   explicitly call `socket_addrs` to convert your `Url` to a type that implements
